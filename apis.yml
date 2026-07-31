@@ -1,7 +1,28 @@
 aid: newneek
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/newneek.png
 name: Newneek
-description: Newneek is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Newneek (뉴닉) is a South Korean knowledge and media platform that makes news and
+  current events easy and fun to follow. Founded by Kim So-yeon and operated by
+  Newneek Co., Ltd. from Seoul's Mapo district, the company is best known for its
+  conversational email newsletter delivered by the mascot "Gosuni," alongside a mobile
+  app, a Slack news bot, and active social channels. Newneek is a consumer content
+  brand rather than an API producer: it publishes no public developer portal, API
+  documentation, or machine-readable API surface. It appears in the API Evangelist
+  network as a 500 Global portfolio company, and this profile captures its identity
+  and domain-security posture. Enrichment probes found no OpenAPI, well-known, OAuth,
+  MCP, or webhook surface to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +32,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Media
+- Newsletter
+- News
+- Content
+- Consumer
+- South Korea
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +50,20 @@ maintainers:
 common:
 - type: Website
   url: https://newneek.co
+- type: SignUp
+  url: https://newneek.co/subscribe
+- type: Support
+  url: https://newneek.co/help
+- type: Blog
+  url: https://blog.naver.com/newneek_official
+- type: TermsOfService
+  url: https://newneek.co/terms-of-service
+- type: PrivacyPolicy
+  url: https://newneek.co/privacy-policy
+- type: DomainSecurity
+  url: security/newneek-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
