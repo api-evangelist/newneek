@@ -32,7 +32,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Media
@@ -62,8 +62,30 @@ common:
   url: https://newneek.co/privacy-policy
 - type: DomainSecurity
   url: security/newneek-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/newneek
+- type: LLMsTxt
+  url: llms/newneek-llms.txt
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 5
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Newneek is a Korean consumer newsletter and media app with no developer program at
+    all — 26 discovery paths across five hosts all returned honest 404s, and its one
+    live API origin (api.newneek.co, nginx, answers /health/) is an undocumented
+    internal backend for the mobile and web apps that 404s every conventional spec path.
+  evidence:
+  - url: https://api.newneek.co/openapi.json
+    status: 404
+  - url: https://api.newneek.co/.well-known/agent-card.json
+    status: 404
+  - url: https://newneek.co/.well-known/security.txt
+    status: 404
+  - url: https://newneek.co/llms.txt
+    status: 404
+  checked: '2026-08-13'
