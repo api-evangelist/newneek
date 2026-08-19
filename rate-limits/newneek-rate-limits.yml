@@ -1,0 +1,12 @@
+generated: '2026-08-13'
+method: searched
+source: https://newneek.co/ (no developer portal, documentation or API reference exists)
+note: >-
+  No rate limits are documented because Newneek publishes no API. There is no
+  developer portal, no API reference and no machine-readable contract on any Newneek
+  host. The api.newneek.co origin is live nginx but every documented and conventional
+  path returns 404, and no docs anywhere describe its limits or headers. Recorded as
+  an honest zero; no RateLimits pointer is wired into apis.yml.
+limit_count: 0
+limits: []
+headers: []

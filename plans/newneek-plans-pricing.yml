@@ -1,0 +1,29 @@
+generated: '2026-08-13'
+method: searched
+source: https://newneek.co/partnership
+note: >-
+  Newneek publishes NO API plans, because it publishes no API. It is a consumer
+  media subscription business. Two commercial surfaces were found and neither is a
+  developer-facing plan: (1) https://newneek.co/premium (뉴닉 프리미엄) returns HTTP 200
+  but is a client-rendered Next.js route whose served HTML contains only the site
+  footer — no tier, price or billing period is present in the markup; (2)
+  https://newneek.co/partnership (광고제휴) is an advertising media page that
+  publishes a single rate, 40,000 KRW per day for app/web banner placement at up to
+  ~70,000 impressions. That is a media rate card, not an API plan, so it is recorded
+  here for the record rather than emitted as a Plans/Pricing pointer.
+plan_count: 0
+plans: []
+non_api_commercial_surfaces:
+- name: 뉴닉 프리미엄 (Newneek Premium)
+  url: https://newneek.co/premium
+  status: 200
+  kind: consumer-subscription
+  prices_published: false
+  note: JS-rendered route; no price rendered server-side.
+- name: 광고제휴 (Advertising partnership)
+  url: https://newneek.co/partnership
+  status: 200
+  kind: advertising-rate-card
+  prices_published: true
+  published_rate: 40,000 KRW / day (app + web banner, up to ~70,000 impressions)
+  audience: 뉴스레터 930k · 앱/웹 1.08M MAU · 인스타그램 100k (provider-stated, Jan 2026)

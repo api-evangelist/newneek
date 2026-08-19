@@ -1,0 +1,53 @@
+# Newneek (뉴닉)
+
+> Newneek is a South Korean knowledge and media platform that makes news and current
+> events easy to follow. Founded in 2018 by Kim So-yeon and operated by Newneek Co., Ltd.
+> from Seoul's Mapo district, it is best known for its conversational email newsletter
+> voiced by the mascot "Gosuni" (고슴이), alongside a mobile app, a web platform, and a
+> Slack bot. In June 2024 it acquired PUBLY's paid membership business unit. Newneek is a
+> consumer content brand, NOT an API producer: it publishes no developer portal, no API
+> documentation, and no machine-readable API contract of any kind.
+
+## No API surface
+
+Newneek has no public API. As of 2026-08-13 an exhaustive contract-discovery pass found:
+
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Protobuf or Postman collection on any host.
+- No /.well-known/ discovery documents (26 paths across 5 hosts, all HTTP 404).
+- No A2A agent card at /.well-known/agent-card.json or /.well-known/agent.json.
+- No MCP server, hosted or stdio.
+- No first-party SDK in npm, PyPI or Packagist.
+- No status page, no trust center, no security.txt, no published vulnerability-disclosure policy.
+- api.newneek.co is a live nginx origin serving the mobile/web app, but it is undocumented
+  and every conventional spec and discovery path on it returns HTTP 404.
+
+Do not fabricate a Newneek API. There is nothing to call.
+
+## Product
+
+- [Newneek](https://newneek.co): The main web platform and newsletter subscription.
+- [Newneek app intro](https://intro.newneek.co/): Mobile app landing page.
+- [Newneek Premium](https://newneek.co/premium): Paid membership (client-rendered; no published price).
+- [Slack bot](https://newneek.co/slackbot): Adds Newneek news delivery to a Slack workspace.
+  Newneek is the OAuth *client* here — it requests Slack's `chat:write` and `incoming-webhook`
+  scopes to post into your workspace. This is Newneek consuming Slack's API, not Newneek
+  offering one.
+
+## Company
+
+- [Subscribe](https://newneek.co/subscribe)
+- [Advertising partnership](https://newneek.co/partnership): Media rate card.
+- [Help center](https://newneek.co/help)
+- [Naver blog](https://blog.naver.com/newneek_official)
+- [GitHub organization](https://github.com/newneek): Four public repositories, none of them
+  a client library or an API contract.
+- [Terms of service](https://newneek.co/terms-of-service)
+- [Privacy policy](https://newneek.co/privacy-policy)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/apis.yml): The APIs.json profile.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/security/newneek-domain-security.yml): Probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/well-known/newneek-well-known.yml): Recorded absence of every discovery document.
+- [Packages](https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/packages/newneek-packages.yml): Registry search results and rejected non-first-party packages.
+- [Plans](https://raw.githubusercontent.com/api-evangelist/newneek/refs/heads/main/plans/newneek-plans-pricing.yml): No API plans; non-API commercial surfaces recorded.

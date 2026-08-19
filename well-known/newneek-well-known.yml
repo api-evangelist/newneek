@@ -1,0 +1,70 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of the RFC 8615 /.well-known/ surface on every Newneek host
+note: >-
+  Every path on every host returned an honest HTTP 404 (no soft-200 SPA shells
+  were observed on the discovery paths). Recorded as an absence: NO WellKnown,
+  SecurityTxt, AgentCard or OAuth pointer is wired into apis.yml from this probe,
+  because none of these documents is served. The api.newneek.co host is a live
+  nginx origin (it answers /health/) but it publishes no discovery surface.
+hosts:
+- host: https://newneek.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.newneek.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.newneek.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://app.newneek.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://intro.newneek.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+summary:
+  hosts_probed: 5
+  paths_probed: 26
+  documents_found: 0

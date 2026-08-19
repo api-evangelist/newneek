@@ -1,0 +1,63 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search, PyPI, Packagist, and a full file-tree scan of every public
+  repository in the first-party GitHub organization https://github.com/newneek
+note: >-
+  Newneek publishes NO first-party client library in any package registry. The
+  GitHub organization is genuinely first-party (org email dev@newneek.co, location
+  Seoul) but its four public repositories are a React Native fork, a CSS submodule,
+  a vendored CKEditor 5 build, and an inherited PHP service client. None of them is
+  a Newneek SDK, so no `SDKs` pointer is wired into apis.yml.
+packages: []
+package_count: 0
+official_sdk_count: 0
+rejected:
+- name: publy/publy-service-client
+  repo: https://github.com/newneek/membership-service-client
+  registry: packagist
+  registry_url: https://packagist.org/packages/publy/publy-service-client
+  version: null
+  published: null
+  official: false
+  reason: >-
+    Ownership check failed at the package level. The repo sits in Newneek's GitHub
+    org, but its composer.json says it belongs to PUBLY: name publy/publy-service-client,
+    homepage https://publy.co, all three authors on @publy.co addresses, and the
+    Packagist canonical repository is bitbucket.org/publyproduct/publy-service-client.git
+    (not the Newneek GitHub mirror). Newneek acquired PUBLY's membership business unit
+    in June 2024, which is why the code now lives in Newneek's org — but the published
+    artifact is PUBLY's, and its own description calls it an INTERNAL microservice
+    client ("멤버십 microservice 내부 api 모듈"), not a public SDK for Newneek's API.
+    Version/published are null because repo.packagist.org returns 404 for the package
+    metadata endpoint even though the search index lists it.
+- name: '@ckeditor/ckeditor5-build-inline'
+  repo: https://github.com/newneek/ckeditor5-build
+  registry: npm
+  version: 16.0.0
+  published: null
+  official: false
+  reason: >-
+    Vendored third-party build. package.json is verbatim CKSource's
+    @ckeditor/ckeditor5-build-inline; Newneek maintains a private build of it for its
+    own editor. Not a Newneek package and not published by Newneek to npm.
+- name: react-native-inappbrowser
+  repo: https://github.com/newneek/react-native-inappbrowser
+  registry: npm
+  version: null
+  published: null
+  official: false
+  reason: GitHub fork of a third-party library, last pushed 2022-07-13. Not published by Newneek.
+registries_checked:
+- registry: npm
+  query: newneek
+  result: 0 packages
+- registry: pypi
+  query: newneek
+  result: 404
+- registry: packagist
+  query: newneek
+  result: 0 packages
+- registry: github
+  query: org:newneek
+  result: 4 public repos, 0 first-party client libraries
